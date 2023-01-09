@@ -11,8 +11,6 @@ team_bc
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 
-![Issues][issues-shield][issues-url]
-
 
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
@@ -39,7 +37,6 @@ This section should list any major frameworks that you built your project using.
 * [Docker]
 
 
-
 <!-- GETTING STARTED -->
 ## Getting Started
 
@@ -53,7 +50,6 @@ This is an example of how to list things you need to use the software and how to
 ```sh
 TBD
 ```
-
 
 
 <!-- SERVICE -->
