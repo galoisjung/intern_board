@@ -63,7 +63,7 @@ TBD
 
 > ### Login page
 
-![alt text](img/UI_login.png "Title Text")
+<img src="img/UI_login.png" height="480">
 
 > ### Board Page
 
