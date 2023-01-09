@@ -80,11 +80,11 @@ const API_KEY = 'ENTER YOUR API';
 <!-- UI -->
 ## UI
 
-> Login page:
+> ## Login page
 
 ![alt text](img/UI_login.png "Title Text")
 
-> Register page:
+> ## Register page
 
 ![alt text](img/UI_register.png "Title Text")
 
