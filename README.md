@@ -59,7 +59,8 @@ TBD
 
 > ### Register page
 
-![alt text](img/UI_register.png "Title Text")
+![](img/UI_register.png)
+<img src="img/UI_register.png"  width="120" height="120">
 
 > ### Login page
 
