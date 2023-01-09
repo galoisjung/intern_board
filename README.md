@@ -73,13 +73,13 @@ const API_KEY = 'ENTER YOUR API';
 ```
 
 
-<!-- USAGE EXAMPLES -->
+<!-- SERVICE -->
 ## Service
 
 회원가입을 통해 계정을 등록하고, 등록된 계정정보로 로그인하여 게시글 및 댓글을 작성하고 수정/삭제할 수 있는 게시판 서비스입니다. 
 
 
-<!-- CONTRIBUTING -->
+<!-- UI -->
 ## UI
 
 Login page:
@@ -90,7 +90,7 @@ Register page:
 
 ![alt text](img/UI_register.png "Title Text"){width=100 height=100px}
 
-<!-- LICENSE -->
+<!-- DATABASE -->
 ## Database
 
 * UserInfo
