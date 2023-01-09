@@ -140,6 +140,7 @@ TBD
 | :---: | :---: | :---: | :---: |
 | VARCHAR (40) | VARCHAR (40) | VARCHAR (40) | VARCHAR (40) |
 | NOT NULL | NOT NULL | NOT NULL | NOT NULL |
+| PK |  |  |  |
 
 * ArticleInfo
 
