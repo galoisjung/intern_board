@@ -28,9 +28,7 @@ team_bc
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should element DRY principles to the rest of your life :smile:
+* 회원가입을 통해 계정을 등록하고, 등록된 계정정보로 로그인하여 게시글 및 댓글을 작성하고 수정/삭제할 수 있는 게시판 서비스입니다. 
 
 ### Built With
 This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
@@ -82,13 +80,13 @@ const API_KEY = 'ENTER YOUR API';
 <!-- UI -->
 ## UI
 
-Login page:
+> Login page:
 
-![alt text](img/UI_login.png "Title Text"){width=100 height=100px}
+![alt text](img/UI_login.png "Title Text")
 
-Register page:
+> Register page:
 
-![alt text](img/UI_register.png "Title Text"){width=100 height=100px}
+![alt text](img/UI_register.png "Title Text")
 
 <!-- DATABASE -->
 ## Database
