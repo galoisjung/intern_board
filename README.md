@@ -20,9 +20,9 @@ team_bc
 * [About the Project](#about-the-project)
   * [Built With](#built-with)
 * [Getting Started](#getting-started)
-* [Service](#Service)
-* [UI](#UI)
-* [Database](#Database)
+* [Service](#service)
+* [UI](#ui)
+* [Database](#database)
 
 
 <!-- ABOUT THE PROJECT -->
