@@ -134,6 +134,8 @@ TBD
 <!-- DATABASE -->
 ## Database
 
+  ### DB Scheme
+
 * UserInfo
 
 | id | password | email | name |
@@ -160,6 +162,7 @@ TBD
 | NOT NULL |
 | PK | 
 
+  ### ORM Method
 
 * get_page(pageNum,articlePerPage=20) → 페이지의 글 JSON
 
