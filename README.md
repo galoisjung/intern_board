@@ -88,23 +88,23 @@ const API_KEY = 'ENTER YOUR API';
 ## Database
 
 
-| id | password | email | name |
+| :id: | :password: | :email: | :name: |
 | --- | --- | --- | --- |
-| VARCHAR (40) | VARCHAR (40) | VARCHAR (40) | VARCHAR (40) |
-| NOT NULL | NOT NULL | NOT NULL | NOT NULL |
+| :VARCHAR (40): | :VARCHAR (40): | :VARCHAR (40): | :VARCHAR (40) |
+| :NOT NULL: | :NOT NULL: | :NOT NULL: | :NOT NULL |
 
 
-| aid | title | uploader | timestamp | article |
+| :aid: | :title: | :uploader: | :timestamp: | :article: |
 | --- | --- | --- | --- | --- |
-| INT| VARCHAR (80) | VARCHAR(40) | DateTime | VARCHAR(6000) |
-| AUTO INCREMENT | NOT NULL |
-| NOT NULL |
-| PK | 
+| :INT: | :VARCHAR (80): | :VARCHAR(40): | :DateTime: | :VARCHAR(6000): |
+| :AUTO INCREMENT: | :NOT NULL: |
+| :NOT NULL: |
+| :PK: | 
 
 
-| rid | aid | reply | uploader | timestamp |
+| :rid: | :aid: | :reply: | :uploader: | :timestamp: |
 | --- | --- | --- | --- | --- |
-| INT | INT | VARCHAR (600) | VARCHAR(40) | DateTime |
-AUTO INCREMENT | NOT NULL | NOT NULL |
-NOT NULL
-PK 
+| :INT: | :INT: | :VARCHAR (600): | :VARCHAR(40): | :DateTime: |
+| :AUTO INCREMENT: | :NOT NULL: | :NOT NULL: |
+| :NOT NULL: |
+| :PK: | 
