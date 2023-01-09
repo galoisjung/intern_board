@@ -18,8 +18,8 @@ team_bc
 * [About the Project](#about-the-project)
   * [Built With](#built-with)
 * [Getting Started](#getting-started)
-* [Service](#service)
 * [UI](#ui)
+* [Service](#service)
 * [Database](#database)
 
 
@@ -50,6 +50,26 @@ This is an example of how to list things you need to use the software and how to
 ```sh
 TBD
 ```
+
+
+<!-- UI -->
+## UI
+
+### localhost:port/
+
+> ### Register page
+
+![alt text](img/UI_register.png "Title Text")
+
+> ### Login page
+
+![alt text](img/UI_login.png "Title Text")
+
+> ### Board Page
+
+> ### Article Page
+
+> ### Posting Page
 
 
 <!-- SERVICE -->
@@ -110,24 +130,6 @@ TBD
   > 
   > output : {success : True/False, data: {댓글1}}
 
-<!-- UI -->
-## UI
-
-### localhost:port/
-
-> ### Register page
-
-![alt text](img/UI_register.png "Title Text")
-
-> ### Login page
-
-![alt text](img/UI_login.png "Title Text")
-
-> ### Board Page
-
-> ### Article Page
-
-> ### Posting Page
 
 <!-- DATABASE -->
 ## Database
@@ -158,3 +160,46 @@ TBD
 | PK | 
 
 
+* get_page(pageNum,articlePerPage=20) → 페이지의 글 JSON
+
+  > input: pageNum (페이지번호), articlePerPage (페이지 당 글 개수 기본값 20)
+  >
+  > logic: session.query() 로 호출 후 slicing 해서 전달 (페이지당 20개)
+  >
+  > output : {success : True/False, data : {{글1제목, 글1글쓴이, 글1시간},{글2제목,글2글쓴이,글2시간}, … } }
+
+
+* get_article(articleID) → 특정 글의 데이터 JSON
+
+  >input : articleID (글 고유 번호)
+  >
+  >logic : session.query() 로 특정 글을 호출, json화 해서 반환
+  >
+  >output : {success : True/False, data : {{글1제목, 글1글쓴이},{글2제목,글2글쓴이}, … } }
+
+
+* post_article(jsonBodyData) → 글 게재 수행 결과 JSON
+
+  >input : jsonBodyData ([글 게재 API](https://www.notion.so/1249b38583ed47bf9da5f604c662f355)의 POST 요청 결과 )
+  >
+  >logic : json 데이터로부터 값들을 받아 새 값 입력
+  >
+  >output : {success: True/False}
+
+
+* edit_article(jsonBodyData) → 글 수정 수행 결과 JSON
+
+  >input : jsonBodyData ([글 수정 API](https://www.notion.so/dcca19a52603482a84a966f922e3499a)의 PATCH 요청 결과 )
+  >
+  >logic : json 데이터로부터 값들을 받아 새 값 입력
+  >
+  >output : {success: True/False}
+
+
+* delete_article(articleID) → 글 삭제 수행 결과 JSON
+
+  >input : articleID (글 고유 번호)
+  >
+  >logic : session.query()로 고유 번호의 글 삭제, 해당 글에 달린 댓글들 삭제
+  >
+  >output :
