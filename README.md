@@ -57,11 +57,11 @@ TBD
 
 ### localhost:port/
 
-> ### Register page
+> ### Login page
 
 <img src="img/UI_register.png" height="480">
 
-> ### Login page
+> ### Register page
 
 <img src="img/UI_login.png" height="480">
 
