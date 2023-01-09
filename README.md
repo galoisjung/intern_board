@@ -87,13 +87,13 @@ const API_KEY = 'ENTER YOUR API';
 <!-- LICENSE -->
 ## Database
 
-> UserInfo
+* UserInfo
 | id | password | email | name |
 | :---: | :---: | :---: | :---: |
 | VARCHAR (40) | VARCHAR (40) | VARCHAR (40) | VARCHAR (40) |
 | NOT NULL | NOT NULL | NOT NULL | NOT NULL |
 
-> ArticleInfo
+* ArticleInfo
 | aid | title | uploader | timestamp | article |
 | :---: | :---: | :---: | :---: | :---: |
 | INT | VARCHAR (80) | VARCHAR(40) | DateTime | VARCHAR(6000) |
@@ -101,7 +101,7 @@ const API_KEY = 'ENTER YOUR API';
 | NOT NULL |
 | PK | 
 
->CommentInfo
+* CommentInfo
 | rid | aid | reply | uploader | timestamp |
 | :---: | :---: | :---: | :---: | :---: |
 | INT | INT | VARCHAR (600) | VARCHAR(40) | DateTime |
