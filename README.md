@@ -84,11 +84,11 @@ const API_KEY = 'ENTER YOUR API';
 
 Login page:
 
-![alt text](img/UI_login.png "Title Text")
+![alt text](img/UI_login.png "Title Text"){width=100 height=100px}
 
 Register page:
 
-![alt text](img/UI_register.png "Title Text")
+![alt text](img/UI_register.png "Title Text"){width=100 height=100px}
 
 <!-- LICENSE -->
 ## Database
