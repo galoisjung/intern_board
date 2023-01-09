@@ -55,32 +55,30 @@ TBD
 <!-- SERVICE -->
 ## Service
 
-> 1. 회원가입을 통한 계정 등록
-> 2. 등록된 계정정보로 로그인
-> 3. 게시판에 게시글 작성 및 열람
-> 4. 게시글 및 댓글 작성 후 수정/삭제
+ 1. 회원가입을 통한 계정 등록
+ 2. 등록된 계정정보로 로그인
+ 3. 게시판에 게시글 작성 및 열람
+ 4. 게시글 및 댓글 작성 후 수정/삭제
 
 ### Service API
 
 * 페이지 조회 : [GET] svc_container:port/board?page=<페이지번호> → 특정 페이지의 글 목록 JSON
 
-> input : page(페이지 번호)
-
-> logic : ORM 객체의 get_page() 메서드의 실행
-
-> output : {success : True/False, data : {{글1제목, 글1글쓴이},{글2제목,글2글쓴이}, … } }
+ > input : page(페이지 번호)
+ > logic : ORM 객체의 get_page() 메서드의 실행
+ > output : {success : True/False, data : {{글1제목, 글1글쓴이},{글2제목,글2글쓴이}, … } }
 
 * 글 선택 : [GET] svc_container:port/article?aid=<글번호> → 특정 글의 내용  JSON 반환
 
-> input : aid (글 고유 번호)
-> logic : ORM 객체의 get_article() 메서드의 실행
-> output : {success : True/False, data : {title : 제목, writer : 글쓴이, article : 본문내용}
+ > input : aid (글 고유 번호)
+ > logic : ORM 객체의 get_article() 메서드의 실행
+ > output : {success : True/False, data : {title : 제목, writer : 글쓴이, article : 본문내용}
 
 * 글 게재 : [POST] svc_container:port/article → 글 게재 성공 여부 JSON
 
-> input : jsonBodyData (글 게재 API로의 POST 요청 결과 )
-> logic : json 데이터를 ORM 객체의 [post_article()](https://www.notion.so/dcca19a52603482a84a966f922e3499a)로 전달하여 처리 
-> output : {success : True/False}
+ > input : jsonBodyData (글 게재 API로의 POST 요청 결과 )
+ > logic : json 데이터를 ORM 객체의 [post_article()](https://www.notion.so/dcca19a52603482a84a966f922e3499a)로 전달하여 처리 
+ > output : {success : True/False}
 
 <!-- UI -->
 ## UI
