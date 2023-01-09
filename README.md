@@ -82,7 +82,13 @@ const API_KEY = 'ENTER YOUR API';
 <!-- CONTRIBUTING -->
 ## UI
 
+Login page:
 
+![alt text](img/UI_login.png "Title Text")
+
+Register page:
+
+![alt text](img/UI_register.png "Title Text")
 
 <!-- LICENSE -->
 ## Database
