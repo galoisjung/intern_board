@@ -105,6 +105,6 @@ const API_KEY = 'ENTER YOUR API';
 | rid | aid | reply | uploader | timestamp |
 | --- | --- | --- | --- | --- |
 | INT | INT | VARCHAR (600) | VARCHAR(40) | DateTime |
-AUTO INCREMENT | NOT NULL |
+AUTO INCREMENT | NOT NULL | NOT NULL |
 NOT NULL
 PK 
