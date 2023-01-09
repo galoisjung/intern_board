@@ -59,8 +59,7 @@ TBD
 
 > ### Register page
 
-![](img/UI_register.png)
-<img src="img/UI_register.png"  width="120" height="120">
+<img src="img/UI_register.png" height="480">
 
 > ### Login page
 
