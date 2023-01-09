@@ -65,13 +65,17 @@ TBD
 * 페이지 조회 : [GET] svc_container:port/board?page=<페이지번호> → 특정 페이지의 글 목록 JSON
 
  > input : page(페이지 번호)
+ >
  > logic : ORM 객체의 get_page() 메서드의 실행
+ >
  > output : {success : True/False, data : {{글1제목, 글1글쓴이},{글2제목,글2글쓴이}, … } }
 
 * 글 선택 : [GET] svc_container:port/article?aid=<글번호> → 특정 글의 내용  JSON 반환
 
  > input : aid (글 고유 번호)
+
  > logic : ORM 객체의 get_article() 메서드의 실행
+ 
  > output : {success : True/False, data : {title : 제목, writer : 글쓴이, article : 본문내용}
 
 * 글 게재 : [POST] svc_container:port/article → 글 게재 성공 여부 JSON
