@@ -87,21 +87,20 @@ const API_KEY = 'ENTER YOUR API';
 <!-- LICENSE -->
 ## Database
 
+
 | id | password | email | name |
 | --- | --- | --- | --- |
-| VARCHAR (40)
-NOT NULL | VARCHAR (40)
-NOT NULL | VARCHAR (40)
-NOT NULL | VARCHAR (40)
-NOT NULL |
+| VARCHAR (40) | VARCHAR (40) | VARCHAR (40) | VARCHAR (40) |
+| NOT NULL | NOT NULL | NOT NULL | NOT NULL |
+
 
 | aid | title | uploader | timestamp | article |
 | --- | --- | --- | --- | --- |
-| INT
-AUTO INCREMENT
-NOT NULL
-PK | VARCHAR (42)
-NOT NULL | VARCHAR(40) | VARCHAR(10) | VARCHAR(6000) |
+| INT| VARCHAR (80)
+| AUTO INCREMENT | NOT NULL | VARCHAR(40) | DateTime | VARCHAR(6000) |
+| NOT NULL |
+| PK | 
+
 
 | rid | aid | reply | uploader | timestamp |
 | --- | --- | --- | --- | --- |
