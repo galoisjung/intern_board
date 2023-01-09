@@ -15,16 +15,16 @@ team_bc
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
 
-* [About the Project](#about-the-project)
+* 1.[About the Project](#about-the-project)
   * [Built With](#built-with)
-* [Getting Started](#getting-started)
-* [UI](#ui)
-* [Service](#service)
-* [Database](#database)
+* 2.[Getting Started](#getting-started)
+* 3.[UI](#ui)
+* 4.[Service](#service)
+* 5.[Database](#database)
 
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+## 1.About The Project
 
 * 회원가입을 통해 계정을 등록하고, 등록된 계정정보로 로그인하여 게시글 및 댓글을 작성하고 수정/삭제할 수 있는 게시판 서비스입니다. 
 
@@ -38,7 +38,7 @@ This section should list any major frameworks that you built your project using.
 
 
 <!-- GETTING STARTED -->
-## Getting Started
+## 2.Getting Started
 
 This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
@@ -53,7 +53,7 @@ TBD
 
 
 <!-- UI -->
-## UI
+## 3.UI
 
 ### localhost:port/
 
@@ -73,7 +73,7 @@ TBD
 
 
 <!-- SERVICE -->
-## Service
+## 4.Service
 
  1. 회원가입을 통한 계정 등록
  2. 등록된 계정정보로 로그인
@@ -132,7 +132,7 @@ TBD
 
 
 <!-- DATABASE -->
-## Database
+## 5.Database
 
   ### DB Scheme
 
