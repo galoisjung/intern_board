@@ -30,12 +30,11 @@ class BoardList extends Component {
     getList = () => {
         Axios.get("http://localhost:5000/board/list", {})
             .then((res) => {
-                console.log(res.data)
                 const data  = res.data;
                 this.setState({
                     boardList: data,
                 });
-                console.log(this.state.boardList)
+          
             })
             .catch((e) => {
                 console.error(e);
@@ -77,14 +76,15 @@ class BoardList extends Component {
                     </thead>
                     <tbody>
                         {
+    
                             // eslint-disable-next-line
-                            this.state.boardList.map((v) => {
+                            Object.values(this.state.boardList).map((v) => {
                                 console.log(v)
                                 return (
                                     
                                     <Board
-                                        id={v.BOARD_ID}
-                                        title={v.BOARD_TITLE}
+                                        id={v.id}
+                                        title={v.subject}
                                         // registerId={v.REGISTER_ID}
                                         // registerDate={v.REGISTER_DATE}
                                         // key={v.BOARD_ID}
