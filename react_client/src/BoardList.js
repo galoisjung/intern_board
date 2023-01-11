@@ -85,7 +85,8 @@ class BoardList extends Component {
                                     <Board
                                         id={v.id}
                                         title={v.subject}
-                                        // registerId={v.REGISTER_ID}
+                                        registerDate={v.create_date}
+                                        registerId={v.creator}
                                         // registerDate={v.REGISTER_DATE}
                                         // key={v.BOARD_ID}
                                     />
@@ -96,6 +97,7 @@ class BoardList extends Component {
                             }
                     </tbody>
                 </Table>
+                <Button style={{marginLeft: '90vh'}} onClick={() => window.location.href = "/write"}>글쓰기</Button> 
                 {/* <Button variant="secondary">수정하기</Button>
                 <Button variant="danger">삭제하기</Button>
                 <Button variant="info">글쓰기</Button> */}

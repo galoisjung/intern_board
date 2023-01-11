@@ -6,6 +6,7 @@ import {Hello} from "./Hello";
 import {useCookies} from "react-cookie";
 import {BrowserRouter, Route, Router, Routes, useNavigate} from "react-router-dom";
 import axios from "axios";
+import Write from "./Write";
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
                 <Route path="/" element={<Login/>}/>
                 <Route path="/register" element={<Register/>}/>
                 <Route path="/hello" element={<Hello/>}/>
+                <Route path="/write" element={<Write/>}/>
             </Routes>
         </BrowserRouter>
         </div>

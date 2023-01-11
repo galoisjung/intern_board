@@ -16,17 +16,21 @@ class Write extends Component {
     
     write = () => {
         
-        Axios.post("http://localhost:5000/api/phishing/create", 
+        Axios.post("http://localhost:5000/board/create", 
            {subject: this.state.subject,
-            content: this.state.content,}
+            content: this.state.content
+           }
         )
             .then((res) => {
                 console.log(res);
+                console.log(this.state.subject)
+                window.location.href = "/hello"
             })
             .catch((e) => {
                 // console.log(data)
                 console.error(e);
             });
+            
     };
     
     update = () => {
@@ -43,6 +47,7 @@ class Write extends Component {
             .catch((e) => {
                 console.error(e);
             });
+            
     };
     
     // eslint-disable-next-line
@@ -57,20 +62,25 @@ class Write extends Component {
 
     render() {
         return (
-            <div>
-                <Form.Group className="mb-3" controlId="subject">
-                    <Form.Label></Form.Label>
-                    <Form.Control style={{width:'72vw'}}type="text" onChange={this.handleChange} placeholder="제목" />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="content">
-                    {/* <Form.Label></Form.Label> */}
-                    <Form.Control style={{width:'72vw', height:'20vw', borderRadius:'20px', padding:'1rem'}}as="textarea" onChange={this.handleChange} placeholder="내용" />
-                </Form.Group>
-                {/* <Button onClick={() => props.setWriting('False')}>취소</Button> */}
+            <div className="article-board">
+                <div>
+                    <Form.Group className="mb-3" controlId="subject">
+                        <Form.Label></Form.Label>
+                        <Form.Control style={{width:'72vw'}}type="text" onChange={this.handleChange} placeholder="제목" />
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="content">
+                        {/* <Form.Label></Form.Label> */}
+                        <Form.Control style={{width:'72vw', height:'20vw', borderRadius:'20px', padding:'1rem'}}as="textarea" onChange={this.handleChange} placeholder="내용" />
+                    </Form.Group>
+                    {/* <Button onClick={() => props.setWriting('False')}>취소</Button> */}
 
-                <Button variant="info" onClick={this.state.isModifyMode ? this.write : this.write}>
-                작성완료
-                </Button>
+                    <Button variant="info" onClick={this.state.isModifyMode ? this.write : this.write}>
+                    작성완료
+                    </Button>
+                    <button className="link-btn" onClick={() => window.location.href = "/hello"}>
+                        취소
+                    </button>
+                </div>
             </div>
         );
     }

@@ -2,7 +2,6 @@ from flask import Flask, session
 from flask_cors import CORS
 from flask_login import LoginManager
 from flask_migrate import Migrate
-from flask_serialize import FlaskSerialize
 from flask_sqlalchemy import SQLAlchemy
 import config
 from flask_session import Session
@@ -21,6 +20,7 @@ def create_app():
 
     db.init_app(app)
     sess.init_app(app)
+    login_manager.init_app(app)
 
     with app.app_context():
         migrate.init_app(app, db)

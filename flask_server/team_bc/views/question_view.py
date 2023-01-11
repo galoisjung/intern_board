@@ -10,15 +10,12 @@ bp = Blueprint('question', __name__, url_prefix='/board')
 
 @bp.route('/list', methods=('GET',))
 def _list():
-    question_list = Question.query.order_by(Question.create_date.desc())
-    result = {}
+    question_list = Question.query.all()
+    result = []
     for i in question_list:
-        dic = i.__dict__
-        dic.pop('_sa_instance_state')
-        dic.pop('create_date')
-        result[dic["id"]] = dic
-
+        result.append(i.to_dict())
     return result
+
 
 
 @bp.route('/create', methods=('POST',))
@@ -26,13 +23,13 @@ def create():
     dic_data = json.loads(request.data)
     subject = dic_data["subject"]
     content = dic_data["content"]
+    creator = "테스트 유저"
     from datetime import datetime
-    q = Question(subject=subject, content=content, create_date=datetime.now())
+    q = Question(subject=subject, creator=creator, content=content, create_date=datetime.now())
     from team_bc import db
     db.session.add(q)
     db.session.commit()
     return Response("{'status':'200'}", status=200, mimetype='application/json')
-
 
 # @bp.route('/modify', methods=('POST',))
 # def modify():
