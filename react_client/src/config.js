@@ -1,10 +1,14 @@
 const BASE_URL = 'http://localhost:5000/api';
 
 export const API = {
-  MAIN: `${BASE_URL}/phishing`,
+  LOGIN: `${BASE_URL}/phishing/login`,
+  LOGOUT: `${BASE_URL}/phishing/logout`,
   REGISTER: `${BASE_URL}/phishing/register`,
   ARTICLES: `${BASE_URL}/phishing/hello`,
-//   SIGNUP: `${BASE_URL}/users/signup`,
+  CHECK: `${BASE_URL}/phishing/check`,
+  GETLIST: `${BASE_URL}/board/list`,
+  WRITE: `${BASE_URL}/board/write`,
+  UPDATE: `${BASE_URL}/board/update`,
 //   WRITERDATA: `${BASE_URL}/users/?user_tag_id=`,
 //   TAGDATA: `${BASE_URL}/branch_tags/userTagList`,
 //   DITAILLIST: `${BASE_URL}/postings`,

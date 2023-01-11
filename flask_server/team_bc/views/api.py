@@ -1,5 +1,7 @@
+import json
 import psycopg2
-from flask import request, jsonify, Blueprint, g
+from flask import request, jsonify, Blueprint, Response
+from team_bc.models.question import Question
 from flask_session import Session
 from sqlalchemy.exc import IntegrityError
 from flask import session
@@ -136,3 +138,18 @@ def check():
         response = jsonify()
         response.status_code = 400
     return response
+
+
+@bp.route('/create', methods=('POST',))
+def create():
+    
+    dic_data = json.loads(request.data)
+    # print(dic_data)
+    subject = dic_data["subject"]
+    content = dic_data["content"]
+    from datetime import datetime
+    q = Question(subject=subject, content=content, create_date=datetime.now())
+    from team_bc import db
+    db.session.add(q)
+    db.session.commit()
+    return Response("{'status':'200'}", status=200, mimetype='application/json')

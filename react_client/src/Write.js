@@ -10,28 +10,33 @@ class Write extends Component {
    
     state = {
         isModifyMode: false,
-        title: "",
+        subject: "",
         content: "",
     };
     
     write = () => {
-        Axios.post("http://localhost:5000/insert", {
-            title: this.state.title,
-            content: this.state.content,
-        })
+        
+        Axios.post("http://localhost:5000/api/phishing/create", 
+           {subject: this.state.subject,
+            content: this.state.content,}
+        )
             .then((res) => {
                 console.log(res);
             })
             .catch((e) => {
+                // console.log(data)
                 console.error(e);
             });
     };
     
     update = () => {
-        Axios.put("http://localhost:5000/update", {
-            title: this.state.title,
+        let data = {
+            subject: this.state.subject,
             content: this.state.content,
-        })
+        }
+        Axios.put("http://localhost:5000/board/update", 
+            JSON.stringify(data)
+        )
             .then((res) => {
                 console.log(res);
             })
@@ -43,7 +48,9 @@ class Write extends Component {
     // eslint-disable-next-line
     handleChange = (e) => {
         this.setState({
-            [e.target.name]: e.target.value,
+            
+            [e.target.id]: e.target.value,
+            
         });
     };
 
@@ -51,17 +58,17 @@ class Write extends Component {
     render() {
         return (
             <div>
-                <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                <Form.Group className="mb-3" controlId="subject">
                     <Form.Label></Form.Label>
-                    <Form.Control style={{width:'70vw'}}type="text" onChange={this.handleChange} placeholder="제목" />
+                    <Form.Control style={{width:'72vw'}}type="text" onChange={this.handleChange} placeholder="제목" />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                <Form.Group className="mb-3" controlId="content">
                     {/* <Form.Label></Form.Label> */}
-                    <Form.Control style={{width:'72vw', height:'20vw', borderRadius:'10px'}}as="textarea" onChange={this.handleChange} placeholder="내용" />
+                    <Form.Control style={{width:'72vw', height:'20vw', borderRadius:'20px', padding:'1rem'}}as="textarea" onChange={this.handleChange} placeholder="내용" />
                 </Form.Group>
                 {/* <Button onClick={() => props.setWriting('False')}>취소</Button> */}
 
-                <Button variant="info" onClick={this.state.isModifyMode ? this.write : this.update}>
+                <Button variant="info" onClick={this.state.isModifyMode ? this.write : this.write}>
                 작성완료
                 </Button>
             </div>
