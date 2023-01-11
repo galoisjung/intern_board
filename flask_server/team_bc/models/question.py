@@ -3,7 +3,7 @@ from sqlalchemy_serializer import SerializerMixin
 from team_bc import db
 
 
-class Question(db.Model, SerializerMixin):
+class Question(db.Model, SerializerMixin,):
     __tablename__ = 'question'
 
     create_date_format = '%s'

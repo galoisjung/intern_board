@@ -1,6 +1,12 @@
 import json
+
+import flask
+import flask_login
 import psycopg2
 from flask import request, jsonify, Blueprint, Response
+from flask_login import login_required
+
+from team_bc import login_manager
 from team_bc.models.question import Question
 from flask_session import Session
 from sqlalchemy.exc import IntegrityError
@@ -43,7 +49,14 @@ from psycopg2.errors import UniqueViolation
 
 # 1. register -> post, login -> post
 bp = Blueprint('api', __name__, url_prefix='/api/phishing/')
-@bp.route('/login', methods=['POST'])
+
+
+@login_manager.user_loader
+def login_user(user_id):
+    return Information.query.get(user_id)
+
+
+@bp.route('/login', methods=['GET', 'POST'])
 def userLogin():
     data = request.get_json()
     user_id = data['id'].strip()
@@ -51,9 +64,8 @@ def userLogin():
     info = Information.query.get(user_id)
     if user_id != "" and password != "":
         if info and info.password == password:
-            session[user_id] = user_id
-            print(session)
-            return jsonify({"session_key": user_id})
+            login_user(user_id)
+            return jsonify({"session_key": "hello"})
         else:
             responce = jsonify({"error": "error"})
             responce.status_code = 401
@@ -72,7 +84,6 @@ def register():
     password = data['pw'].strip()
     email = data['email'].strip()
     name = data['name'].strip()
-    print(session)
     # -------------------------------------------- (1) response (원래 만들었던 server.py 참고하여 작성...?) -> (2) UI 작성
     # ---------------------------------- DataBase 와 연결
     try:
@@ -123,11 +134,11 @@ def get_counts():
 
 
 @bp.route('/check', methods=['POST'])
+@login_required
 def check():
     data = request.get_json()
-    user_id = data['user_id']
     try:
-        if data['session_key'] != session[user_id]:
+        if data['session_key'] != session["session_key"]:
             response = jsonify()
             response.status_code = 400
 
@@ -142,7 +153,6 @@ def check():
 
 @bp.route('/create', methods=('POST',))
 def create():
-    
     dic_data = json.loads(request.data)
     # print(dic_data)
     subject = dic_data["subject"]

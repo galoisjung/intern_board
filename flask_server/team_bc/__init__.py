@@ -10,17 +10,18 @@ db = SQLAlchemy()
 migrate = Migrate()
 login_manager = LoginManager()
 
-sess = Session()
+# sess = Session()
 
 
 def create_app():
-    app = Flask(__name__, instance_relative_config=False)
+    app = Flask(__name__)
     app.config.from_object(config)
     app.secret_key = "super"
 
     db.init_app(app)
-    sess.init_app(app)
+    # sess.init_app(app)
     login_manager.init_app(app)
+    login_manager.login_message_category = "info"
 
     with app.app_context():
         migrate.init_app(app, db)

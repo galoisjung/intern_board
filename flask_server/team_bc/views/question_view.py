@@ -2,13 +2,15 @@ from flask import render_template, Blueprint, url_for, redirect
 from flask import request
 import json
 from flask import Response
+from flask_login import login_required
 
 from team_bc.models.question import Question
 
 bp = Blueprint('question', __name__, url_prefix='/board')
 
 
-@bp.route('/list', methods=('GET',))
+@bp.route('/list', methods=('GET','POST'))
+@login_required
 def _list():
     question_list = Question.query.all()
     result = []
@@ -17,13 +19,13 @@ def _list():
     return result
 
 
-
 @bp.route('/create', methods=('POST',))
 def create():
     dic_data = json.loads(request.data)
     subject = dic_data["subject"]
     content = dic_data["content"]
-    creator = "테스트 유저"
+    from flask import session
+    creator = session['user_name']
     from datetime import datetime
     q = Question(subject=subject, creator=creator, content=content, create_date=datetime.now())
     from team_bc import db
