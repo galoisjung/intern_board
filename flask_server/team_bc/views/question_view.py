@@ -9,9 +9,10 @@ from team_bc.models.question import Question
 bp = Blueprint('question', __name__, url_prefix='/board')
 
 
-@bp.route('/list', methods=('GET','POST'))
+@bp.route('/list')
 @login_required
 def _list():
+    from flask import session
     question_list = Question.query.all()
     result = []
     for i in question_list:
@@ -19,13 +20,14 @@ def _list():
     return result
 
 
-@bp.route('/create', methods=('POST',))
+@bp.route('/create', methods=(['POST']))
+@login_required
 def create():
     dic_data = json.loads(request.data)
     subject = dic_data["subject"]
     content = dic_data["content"]
     from flask import session
-    creator = session['user_name']
+    creator = session['_user_id']
     from datetime import datetime
     q = Question(subject=subject, creator=creator, content=content, create_date=datetime.now())
     from team_bc import db

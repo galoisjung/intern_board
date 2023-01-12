@@ -4,7 +4,98 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e6e9fdf-fcad-4e41-b198-e7de4e8f93bc" name="변경" comment="망한거 수정" />
+    <list default="true" id="5e6e9fdf-fcad-4e41-b198-e7de4e8f93bc" name="변경" comment="망한거 수정">
+      <change afterPath="$PROJECT_DIR$/flask_session/24deeb2dd5eaef5f91d860f821ad6253" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flask_session/8be9ad7fdc6d407b0e046f9774394fb2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flask_session/f0b291fdb069613a4b10eac8e75a74de" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flask_session/feb1b7d789c64aa141fff9e3d3ffc6ce" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/007860a7bacb42779dc6011f194f8a4b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/009f9877cefe0ceaf6776c1e5fa639c4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/012853051220a899522292b5ea5e48b8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/013bf3f0692bd34c5737640e9eb83dd8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/04b66d6faa29faf513dea73826fb49ce" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/06c78b33fd11592563cc9b0f4cb28ec0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/06f767f6c616f3b18e8f225751daabbc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/0cbb4c5f3a1ee70bf54fceb43196a4e5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/0d960790101808a7d374386f5999e582" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/12bdc87dbc29c5585e34b94051c8aa0f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/16478e4cf31e8182bb2030b82444903e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/16fa80bcc6e2855907615b8579e69bb7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/1b2565feb0b650e56fe4aae4f6e546b9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/1fc091222111b98c66a623704c027159" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/2029240f6d1128be89ddc32729463129" beforeDir="false" afterPath="$PROJECT_DIR$/flask_session/2029240f6d1128be89ddc32729463129" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/2136dce308a2750612e15f0e42a8cd8d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/21844f73d9d513259b0e84564bcefcd4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/240df7bf487284f642dbcc33f8bc99dd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/26fbc2d797873261fd44ced6cdba5897" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/2aba50ef1e04fa3fe9bacb7a90e597b7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/2b49106f8734102a12514e67a85e41fd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/2ce663f93455d0aa199c23d861a72ed4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/3109af4b298810005d8f5a140ddabfeb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/365e247a206eadb0a9e69130e601b393" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/3891493cdac75f5d0f359e129821654d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/3a965885dbd84823f170bd8af09643b8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/3e1446d77aaa3bdf8985aa42cfbb1b4f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/49c274209030f0e6ffe0978e4ab89ec2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/4b43e4ceace1aafe3f1d834764624a40" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/4cdddd76c34f3d1db15d7c12fe3362da" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/572abd1d703afe159704fe8b336090df" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/60ebb60633b08adf1ea976fc2ab69c17" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/674f6df08fdbd83215281c05d363ee58" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/70d82c60c8844cd56d70684fc3f38656" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/71480b022d8d9297e5907eb2c24c8224" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/728d1ca3c0ae0994a540bdb566a25ccb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/737e36c1c97bb186e812c3a1f6d4d52d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/7423c7b3f041100d31dbfb0b64e3ac59" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/78074b9daf92b16a34f26df384d55463" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/7822702bf7fc79517c7988770dba7f1e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/7836a78059a939302985c969956d8b26" beforeDir="false" afterPath="$PROJECT_DIR$/flask_session/7836a78059a939302985c969956d8b26" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/7af5d3d8ec6350cec020c921edd6cebe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/847300048f333b180ee8fa6ba23dafb6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/848f3f81098de87210f1de19b5a6bd47" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/8a87c65c4599595f1d4bf7fab1b484ee" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/8be37ebb501ba2d49bf44722a7a2fd5d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/8ce24238a9b368b033848553a5528c5d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/90615556e4c81fcdb4b66eaf77ef53f9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/9083d925f5dab76c9dc4822ec1365882" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/90cd2dc3d94083f34825e6f81841a732" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/94f314783261d291458e2cc878c0f03e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/95ff6852710998a64e85ec2d277b16ab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/a30b56fc6293b1765c9a59bd366598ae" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/a8bff5a30054dbc4ac214068b0d1377e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/aab4a94a6b56ccd9ad46651365c1eff9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/ad2515f6d4766ee7519026f440974e5f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/b65b56d2cf51e25678ad2793a82f7b64" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/b7445630b7027320e340d42c8f1917fd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/ba76268b4011fbda4377fe41022f3926" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/c90087bfdcf6e26382d988fa3053ac0d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/cbea6a32cc3cbfdcd11722d77662cd18" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/d23cc37d8699fc58e29b6efc44a8b1e0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/d2645b18881674040a950d012516aa18" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/da3aabdc68678b8f9a8dacb54470c904" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/de2565256ff161b8a86549aceed581dc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/ea27bed3d35b70c261c612dbac27c3e4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/eb1c0224890e4ab18bbe27fe0483d761" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/f1676ea444eb87ba04533cc2321455a7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/f217b18a88b93ad94c833f2a3d75ec35" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/f2fd98635b749386fe5d65063be58e8d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/f30fd06d990e6c9fea8f737de87d2b7f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/f38962a656312202bd36c3597585b0de" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/f5393e9a3bc023ee30bf78a9901370da" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/f63995a80b2f54a67995ab23319e05d5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/f82ceceea727cb8628203ec1deab802f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/f92858716ea668a8ece34d17e4d7594d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrate.bat" beforeDir="false" afterPath="$PROJECT_DIR$/migrate.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/team_bc/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/team_bc/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/team_bc/models/question.py" beforeDir="false" afterPath="$PROJECT_DIR$/team_bc/models/question.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/team_bc/views/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/team_bc/views/api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/team_bc/views/question_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/team_bc/views/question_view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react_client/src/Hello.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react_client/src/Hello.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react_client/src/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react_client/src/Login.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,15 +132,20 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/galoi/Downloads/team_bc/flask_server/team_bc/__init__.py",
+    "last_opened_file_path": "C:/Users/galoi/Downloads/team_bc/flask_server",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\galoi\Downloads\team_bc\flask_server" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Flask (team_bc/__init__.py)" type="Python.FlaskServer" nameIsGenerated="true">
       <module name="flask_server" />
@@ -79,6 +175,7 @@
       <workItem from="1673409552976" duration="1871000" />
       <workItem from="1673411454542" duration="223000" />
       <workItem from="1673411694443" duration="15373000" />
+      <workItem from="1673480359843" duration="7060000" />
     </task>
     <task id="LOCAL-00001" summary="망한거 수정">
       <created>1673410020109</created>
@@ -105,20 +202,11 @@
     <MESSAGE value="망한거 수정" />
     <option name="LAST_COMMIT_MESSAGE" value="망한거 수정" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/team_bc/views/api.py</url>
-          <line>67</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/flask_server$question_view.coverage" NAME="question_view 커버리지 결과" MODIFIED="1673411514433" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/team_bc/views" />
-    <SUITE FILE_PATH="coverage/flask_server$__init__.coverage" NAME="__init__ 커버리지 결과" MODIFIED="1673411540035" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/team_bc" />
-    <SUITE FILE_PATH="coverage/flask_server$Flask__team_bc___init___py_.coverage" NAME="Flask (team_bc/__init__.py) 커버리지 결과" MODIFIED="1673428272770" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/flask_server$question_view.coverage" NAME="question_view 커버리지 결과" MODIFIED="1673481398846" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/team_bc/views" />
+    <SUITE FILE_PATH="coverage/flask_server$__init__.coverage" NAME="__init__ 커버리지 결과" MODIFIED="1673483638139" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/team_bc" />
+    <SUITE FILE_PATH="coverage/flask_server$Flask__team_bc___init___py_.coverage" NAME="Flask (team_bc/__init__.py) 커버리지 결과" MODIFIED="1673487370362" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/flask_server$config.coverage" NAME="config 커버리지 결과" MODIFIED="1673483481946" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/flask_server$Infomation.coverage" NAME="Infomation 커버리지 결과" MODIFIED="1673483487523" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/team_bc/models" />
   </component>
 </project>

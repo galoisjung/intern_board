@@ -10,7 +10,8 @@ db = SQLAlchemy()
 migrate = Migrate()
 login_manager = LoginManager()
 
-# sess = Session()
+
+sess = Session()
 
 
 def create_app():
@@ -19,9 +20,13 @@ def create_app():
     app.secret_key = "super"
 
     db.init_app(app)
-    # sess.init_app(app)
+    sess.init_app(app)
     login_manager.init_app(app)
-    login_manager.login_message_category = "info"
+
+    from team_bc.models.Infomation import Information
+    @login_manager.user_loader
+    def load_user(user_id):
+        return Information.query.get(user_id)
 
     with app.app_context():
         migrate.init_app(app, db)
