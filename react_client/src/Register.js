@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import axios from 'axios';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export const Register = (props) => {
     const [email, setEmail] = useState('');
@@ -8,6 +8,7 @@ export const Register = (props) => {
     const [name, setName] = useState('');
     const [passvar, setPassvar] = useState('');
     const [ID, setID] = useState('');
+    const navigate = useNavigate()
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -36,7 +37,7 @@ export const Register = (props) => {
             .then(function (response) {
                 if (response.status === 200) {
                     alert("회원가입 성공! 환영합니다.")
-                    props.onFormSwitch('login')
+                    navigate("/")
                 }
 
 

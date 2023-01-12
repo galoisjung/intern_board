@@ -8,6 +8,10 @@ import Button from "react-bootstrap/esm/Button";
 
 export const Hello = (props) => {
     const [cookies,setCookie,removeCookie] = useCookies(['session_key'])
+    
+    axios.post('http://localhost:5000/api/phishing/check',
+        cookies["session_key"])
+
     const [isWriting, setWriting] = useState(['False'])
 
 
@@ -19,9 +23,12 @@ export const Hello = (props) => {
         //     pw: pass,
         // }
 
-        axios.get('http://localhost:5000/api/phishing/logout'
-            ).then((res) => {
-                removeCookie('session')
+        axios.post('http://localhost:5000/api/phishing/logout',
+            JSON.stringify(cookies["session_key"]), {
+                headers: {
+                    "Content-Type": `application/json`,
+                },
+            }).then((res) => {
                 console.log(res)
                 // setCookie('session_key', {
                 //     "session_key": res.data.session_key,
@@ -29,6 +36,7 @@ export const Hello = (props) => {
                 // }
                 // )
             })
+            removeCookie('session_key')
             window.location.href = "/"
         }
         
