@@ -30,15 +30,9 @@ export const Login = (props) => {
                 },
             })
             .then((res) => {
-                console.log(res.data.session_key)
-                setCookie('session_key', {
-                    "session_key": res.data.session_key,
-                    "user_id": ID
-                })
-                console.log(res)
             if (res.status === 200) {
                 alert("로그인 성공")
-                navigate("/hello")
+                navigate("/board")
             }
         }).catch(function (e) {
             console.log(e)

@@ -1,20 +1,13 @@
-import json
 import psycopg2
 from flask import request, jsonify, Blueprint, Response
-from team_bc.models.question import Question
+from flask_login import login_user, login_required, logout_user
 from flask_session import Session
 from sqlalchemy.exc import IntegrityError
 from flask import session
+
+from team_bc import login_manager
 from team_bc.models.Infomation import Information
 from psycopg2.errors import UniqueViolation
-
-# from models import Phishing
-
-# 명령어
-# flask db init
-# flask db migrate
-# flask db upgrade
-
 
 # create a table
 
@@ -41,8 +34,14 @@ from psycopg2.errors import UniqueViolation
 #     return render_template('index.js')
 
 
-# 1. register -> post, login -> post
 bp = Blueprint('api', __name__, url_prefix='/api/phishing/')
+
+
+@login_manager.user_loader
+def load_user(user_id):
+    return Information.query.get(user_id)
+
+
 @bp.route('/login', methods=['POST'])
 def userLogin():
     data = request.get_json()
@@ -51,9 +50,8 @@ def userLogin():
     info = Information.query.get(user_id)
     if user_id != "" and password != "":
         if info and info.password == password:
-            session[user_id] = user_id
-            print(session)
-            return jsonify({"session_key": user_id})
+            login_user(info)
+            return jsonify({"session_key": "hello"})
         else:
             responce = jsonify({"error": "error"})
             responce.status_code = 401
@@ -72,7 +70,6 @@ def register():
     password = data['pw'].strip()
     email = data['email'].strip()
     name = data['name'].strip()
-    print(session)
     # -------------------------------------------- (1) response (원래 만들었던 server.py 참고하여 작성...?) -> (2) UI 작성
     # ---------------------------------- DataBase 와 연결
     try:
@@ -94,62 +91,8 @@ def register():
     return response
 
 
-# ----------------------------------------- route -> post (login)
-@bp.route('/database', methods=['GET', 'POST'])
-def get_database():
-    information_all = Information.get_all()
-    results = []
-
-    for info in information_all:
-        obj = {
-            'url': info.url
-        }
-        results.append(obj)
-    response = jsonify(results)
-    response.status_code = 200
-    return response
-
-
-# 데이터베이스 연결
-@bp.route('/count', methods=['GET'])
-def get_counts():
-    information_all = Information.get_all()
-    count = len(information_all)
-    response = jsonify({
-        'count': count
-    })
-    response.status_code = 200
-    return response
-
-
-@bp.route('/check', methods=['POST'])
-def check():
-    data = request.get_json()
-    user_id = data['user_id']
-    try:
-        if data['session_key'] != session[user_id]:
-            response = jsonify()
-            response.status_code = 400
-
-        else:
-            response = jsonify()
-
-    except KeyError:
-        response = jsonify()
-        response.status_code = 400
-    return response
-
-
-@bp.route('/create', methods=('POST',))
-def create():
-    
-    dic_data = json.loads(request.data)
-    # print(dic_data)
-    subject = dic_data["subject"]
-    content = dic_data["content"]
-    from datetime import datetime
-    q = Question(subject=subject, content=content, create_date=datetime.now())
-    from team_bc import db
-    db.session.add(q)
-    db.session.commit()
-    return Response("{'status':'200'}", status=200, mimetype='application/json')
+@bp.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    return jsonify("로그아웃 성공")

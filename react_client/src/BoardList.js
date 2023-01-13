@@ -2,6 +2,7 @@ import { Component } from "react";
 import Axios from "axios";
 import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom";
 
 const Board = ({
     id,
@@ -12,7 +13,7 @@ const Board = ({
     return (
         <tr>
             <td>{id}</td>
-            <td>{title}</td>
+            <td width="60%"><Link to={`/article?aid=${id}`}>{title}</Link></td>
             <td>{registerId}</td>
             <td>{registerDate}</td>
         </tr>
@@ -34,7 +35,7 @@ class BoardList extends Component {
                 this.setState({
                     boardList: data,
                 });
-          
+                console.log(data)
             })
             .catch((e) => {
                 console.error(e);
@@ -65,7 +66,7 @@ class BoardList extends Component {
                     justifyContent:'center',
                     borderRadius: '999px'
                     }}>Contents</div>
-                <Table align="center" position="relative" width='800vmin20vw'>
+                <Table align="center" position="relative" width='100%'>
                     <thead>
                         <tr>
                             <th>번호</th>
@@ -76,26 +77,26 @@ class BoardList extends Component {
                     </thead>
                     <tbody>
                         {
-    
                             // eslint-disable-next-line
                             Object.values(this.state.boardList).map((v) => {
-                                console.log(v)
+                                // console.log(v)
                                 return (
                                     
-                                    <Board
+                                    <Board key={v.id}
                                         id={v.id}
                                         title={v.subject}
-                                        // registerId={v.REGISTER_ID}
+                                        registerDate={v.create_date}
+                                        registerId={v.creator}
                                         // registerDate={v.REGISTER_DATE}
                                         // key={v.BOARD_ID}
                                     />
+                                    
                                 );
-                            }
-                            
-                            )
+                            })
                             }
                     </tbody>
                 </Table>
+                <Button style={{marginLeft: '90vh'}} onClick={() => window.location.href = "/write"}>글쓰기</Button> 
                 {/* <Button variant="secondary">수정하기</Button>
                 <Button variant="danger">삭제하기</Button>
                 <Button variant="info">글쓰기</Button> */}
