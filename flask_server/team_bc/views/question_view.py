@@ -42,6 +42,7 @@ def create():
 
 
 @bp.route('/update', methods=['POST'])
+@login_required
 def modify():
     dic_data = json.loads(request.data)
     print(dic_data)
@@ -71,6 +72,7 @@ def delete():
 
 
 @bp.route('/article', methods=['POST'])
+@login_required
 def get_article():
     aid = request.get_json()['aid']
     article = Question.query.get(aid)

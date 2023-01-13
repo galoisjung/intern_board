@@ -2,6 +2,8 @@ from flask import Blueprint, jsonify
 from flask import request
 import json
 
+from flask_login import login_required
+
 from team_bc.models import question
 from team_bc.models.Infomation import Information
 from team_bc.models.answer import Answer
@@ -12,6 +14,7 @@ bp = Blueprint('answer', __name__, url_prefix='/comment')
 
 ## 댓글 게재
 @bp.route("/<int:rid>/create", methods=["POST"])
+@login_required
 def add_comment(rid):
     """Add a comment and return the comment with ID"""
     dic_data = json.loads(request.data)
@@ -19,8 +22,10 @@ def add_comment(rid):
     content = dic_data['reply']
     from flask import session
     user_id = session['_user_id']
+    information = Information.query.get_or_404(user_id)
+    creator = information.name
     from datetime import datetime
-    answer = Answer(content=content, create_date=datetime.now(), creator=user_id)
+    answer = Answer(content=content, create_date=datetime.now(), creator=creator)
     question.answer_set.append(answer)
     from team_bc import db
     db.session.commit()
@@ -29,6 +34,7 @@ def add_comment(rid):
 
 
 @bp.route("/<int:rid>")
+@login_required
 def show_comment(rid):
     question = Question.query.get_or_404(rid)
     print(question.answer_set)
@@ -38,9 +44,15 @@ def show_comment(rid):
     return result
 
 
-## 댓글 수정
-@bp.route("/<int:rid>/modify", methods=["PUT"])
-def update_comment(rid):
+## 댓글 삭제
+@bp.route("/<int:rid>/delete", methods=["POST"])
+@login_required
+def delete_comment(rid):
+    dic_data = json.loads(request.data)
+    answer = Answer.query.filter(Answer.question_id == rid).filter(Answer.id == dic_data["id"]).one()
+    print(answer)
+    from team_bc import db
+    db.session.delete(answer)
+    db.session.commit()
     return jsonify()
 
-## 댓글 삭제
