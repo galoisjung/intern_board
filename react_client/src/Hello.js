@@ -16,7 +16,7 @@ export const Hello = (props) => {
 
         // let data = {
         //     id: ID,
-        //     pw: pass,
+        //     pw: pass,d\
         // }
 
         axios.get('http://localhost:5000/api/phishing/logout').then((res) => {
