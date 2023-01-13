@@ -12,7 +12,7 @@ migrate = Migrate()
 login_manager = LoginManager()
 
 
-sess = Session()
+# sess = Session()
 
 
 def create_app():
@@ -20,7 +20,7 @@ def create_app():
     app.config.from_object(config)
 
     db.init_app(app)
-    sess.init_app(app)
+    # sess.init_app(app)
     login_manager.init_app(app)
 
     from team_bc.models.Infomation import Information

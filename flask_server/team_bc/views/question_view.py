@@ -21,6 +21,7 @@ def _list():
         part.pop("content")
         if part["flag"]:
             result.append(i.to_dict())
+        print(session)
     return result
 
 
