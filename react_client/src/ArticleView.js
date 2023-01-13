@@ -23,8 +23,6 @@ export const ArticleView = (props) => {
         let data = {
             aid: articleId,
         }
-        console.log("hi")
-        console.log(articleId)
 
         axios.post("http://localhost:5000/board/article",JSON.stringify(data), {
             headers: {

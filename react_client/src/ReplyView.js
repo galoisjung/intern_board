@@ -7,30 +7,6 @@ import Write from "./Write";
 import {Reply} from "./Reply";
 
 
-const Board = ({
-                   rid,
-                   reply,
-                   uploader,
-                   date,
-
-               }) => {
-    return (
-        <tr>
-            <td>{reply}</td>
-            <td>{uploader}</td>
-            <td>{date}</td>
-            <button id={rid} style={{marginLeft: '1%', background: "red"}} className="link-btn"
-                    onClick={()=>delCom(rid)}>X
-            </button>
-        </tr>
-    )
-        ;
-};
-
-const delCom = (v) => {
-    console.log(v)
-}
-
 /**
  * BoardList class
  */
@@ -42,16 +18,41 @@ class ReplyView extends Component {
     getList = (props) => {
         Axios.get(`http://localhost:5000/comment/${this.props.aid}`)
             .then((res) => {
-                console.log(res.data)
                 const data = res.data;
                 this.setState({
                     replyList: data,
                 });
-                console.log(data)
             })
             .catch((e) => {
                 console.error(e);
             });
+    };
+    delCom = (prop) => {
+        Axios.post(`http://localhost:5000/comment/${this.props.aid}/delete`, {id: prop}
+        ).then((res) => {
+            window.location.reload()
+        })
+            .catch((e) => {
+                console.error(e);
+            });
+    }
+    Board = (
+        rid,
+        reply,
+        uploader,
+        date,
+    ) => {
+        return (
+            <tr key={rid}>
+                <td>{reply}</td>
+                <td>{uploader}</td>
+                <td>{date}</td>
+                <button id={rid} style={{marginLeft: '1%', background: "red"}} className="link-btn"
+                        onClick={() => this.delCom(rid)}>X
+                </button>
+            </tr>
+        )
+            ;
     };
 
 
@@ -66,7 +67,6 @@ class ReplyView extends Component {
      */
     render() {
         // eslint-disable-next-line
-        const {replyList} = this.state;
 
         return (
             <div>
@@ -85,17 +85,15 @@ class ReplyView extends Component {
                     {
                         // eslint-disable-next-line
                         Object.values(this.state.replyList).map((v) => {
-                            console.log(v)
                             return (
 
-                                <Board
-                                    rid={v.id}
-                                    reply={v.content}
-                                    uploader={v.creator}
-                                    date={v.create_date}
-                                    // registerDate={v.REGISTER_DATE}
+                                this.Board(
+                                    v.id,
+                                    v.content,
+                                    v.creator,
+                                    v.create_date,
+                                )
 
-                                />
 
                             );
                         })
