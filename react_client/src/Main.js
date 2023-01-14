@@ -4,9 +4,10 @@ import {useCookies} from "react-cookie";
 import BoardList from './BoardList';
 import Write from "./Write";
 import Button from "react-bootstrap/esm/Button";
+import {API} from "./config";
 
 
-export const Hello = (props) => {
+export const Main = (props) => {
 
     const [isWriting, setWriting] = useState(['False'])
     const [, , removeCookie] = useCookies()
@@ -19,7 +20,7 @@ export const Hello = (props) => {
         //     pw: pass,d\
         // }
 
-        axios.get('http://localhost:5000/api/phishing/logout').then((res) => {
+        axios.get(API.LOGOUT).then((res) => {
             // setCookie('session_key', {
             //     "session_key": res.data.session_key,
             //     "user_id": ID

@@ -1,3 +1,4 @@
+import flask_login
 from flask import render_template, Blueprint, url_for, redirect, jsonify
 from flask import request
 import json
@@ -21,7 +22,6 @@ def _list():
         part.pop("content")
         if part["flag"]:
             result.append(i.to_dict())
-        print(session)
     return result
 
 
@@ -35,7 +35,7 @@ def create():
     user_id = session['_user_id']
     creator = Information.query.get(user_id).name
     from datetime import datetime
-    q = Question(subject=subject, creator=creator, content=content, create_date=datetime.now())
+    q = Question(subject=subject, creator=creator, content=content, create_date=datetime.now(), user_id=user_id)
     from team_bc import db
     db.session.add(q)
     db.session.commit()
@@ -46,18 +46,21 @@ def create():
 @login_required
 def modify():
     dic_data = json.loads(request.data)
-    print(dic_data)
     subject = dic_data["subject"]
     content = dic_data["content"]
     question_id = dic_data["aid"]
     question = Question.query.get(question_id)
-    question.subject = subject
-    question.content = content
+    if str(flask_login.current_user.id) == str(question.user_id):
+        question.subject = subject
+        question.content = content
+        from team_bc import db
+        db.session.commit()
+        response = jsonify()
+    else:
+        response = jsonify()
+        response.status_code = 401
 
-    from team_bc import db
-    a = db.session.commit()
-    print(a)
-    return jsonify()
+    return response
 
 
 @bp.route('/delete', methods=('POST',))
@@ -66,11 +69,15 @@ def delete():
     dic_data = json.loads(request.data)
     question_id = dic_data["aid"]
     question = Question.query.get(question_id)
-    from team_bc import db
-    db.session.delete(question)
-    db.session.commit()
-    return Response("{'status':'200'}", status=200, mimetype='application/json')
+    if str(flask_login.current_user.id) == str(question.user_id):
+        from team_bc import db
+        db.session.delete(question)
+        db.session.commit()
+        res = Response("", status=200, mimetype='application/json')
+    else:
+        res = Response("", status=401, mimetype='application/json')
 
+    return res
 
 @bp.route('/article', methods=['POST'])
 @login_required

@@ -2,6 +2,8 @@ import React, {useState} from "react";
 import axios from 'axios';
 import {useCookies} from "react-cookie";
 import {useNavigate} from "react-router-dom";
+import {API} from "./config";
+import App from "./App";
 
 export const Login = (props) => {
     const [ID, setID] = useState('');
@@ -22,7 +24,9 @@ export const Login = (props) => {
             pw: pass,
         }
 
-        axios.post('http://localhost:5000/api/phishing/login',
+        const address = API.LOGIN;
+
+        axios.post(address,
             JSON.stringify(data), {
                 headers: {
                     "Content-Type": "application/json",
@@ -30,11 +34,11 @@ export const Login = (props) => {
                 },
             })
             .then((res) => {
-            if (res.status === 200) {
-                alert("로그인 성공")
-                navigate("/board")
-            }
-        }).catch(function (e) {
+                if (res.status === 200) {
+                    alert("로그인 성공")
+                    navigate("/board")
+                }
+            }).catch(function (e) {
             console.log(e)
             if (e.request.status === 401) {
                 alert("입력하신 정보가 잘못되었습니다.")

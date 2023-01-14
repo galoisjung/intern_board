@@ -1,15 +1,16 @@
-import React, { Component, useEffect, useState }from "react";
+import React, {Component, useEffect, useState} from "react";
 import axios from "axios";
 import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
 import Update from "./Update";
 import Write from "./Write";
 import {Reply} from "./Reply";
+import {API, BOARD} from "./config";
 
 
 export const ArticleView = (props) => {
-    const articleId_temp = decodeURI(window.location.href).split('http://localhost:3000/article?aid=').reverse()[0];
-    const articleId = articleId_temp.split('/')[0];
+    let articleId_temp = new URLSearchParams(window.location.search);
+    const articleId = articleId_temp.get("aid");
 
     const [state, setState] = useState({article: [],});
     const [id, setId] = useState([''])
@@ -24,7 +25,7 @@ export const ArticleView = (props) => {
             aid: articleId,
         }
 
-        axios.post("http://localhost:5000/board/article",JSON.stringify(data), {
+        axios.post(BOARD.ARTICLES, JSON.stringify(data), {
             headers: {
                 "Content-Type": "application/json",
                 "Connection": "keep-alive"
@@ -37,7 +38,7 @@ export const ArticleView = (props) => {
                 //       return i;
                 //     }
                 //   });
-                const data  = res.data;
+                const data = res.data;
                 // setState({
                 //     article: data,
                 // });
@@ -53,7 +54,8 @@ export const ArticleView = (props) => {
                 console.error(e);
             });
 
-    },[]);
+    }, []);
+
     function modeChange() {
         setModifyMode('True')
     }
@@ -64,12 +66,12 @@ export const ArticleView = (props) => {
             aid: articleId,
         }
 
-        axios.post("http://localhost:5000/board/delete",
+        const address = BOARD.DELETE
+
+        axios.post(address,
             data
         )
             .then((res) => {
-                console.log(res);
-                console.log(data)
                 window.location.href = "/board"
             })
             .catch((e) => {
@@ -79,6 +81,7 @@ export const ArticleView = (props) => {
 
 
     }
+
     /**
      */
     return (
@@ -88,35 +91,35 @@ export const ArticleView = (props) => {
                 <div>
                     <Table align="center" position="relative" width='100%'>
                         <tbody>
-                        <tr align="left" border-bottom='1px' padding= '10px'>
+                        <tr align="left" border-bottom='1px' padding='10px'>
                             {/* <td width="50px">{id}</td> */}
                             <td width="50px">제목</td>
                             <td width="500px"><b>{title}</b></td>
 
                         </tr>
 
-                        <tr align="left" border-bottom='1px' padding= '10px'>
+                        <tr align="left" border-bottom='1px' padding='10px'>
                             <td width="50px">작성자</td>
                             <td width="500px">{registerId}</td>
                             {/* <td width="100px">{registeDate}</td> */}
                         </tr>
-                        <tr align="left" border-bottom='1px' padding= '10px'>
+                        <tr align="left" border-bottom='1px' padding='10px'>
                             <td width="50px">작성일</td>
                             <td width="500px">{registerDate}</td>
                             {/* <td width="100px">{registeDate}</td> */}
                         </tr>
                         <tr>
                             <td colSpan={2}>
-                                <div style={{height:'1px', backgroundColor:'#46536B', width:'100%'}}></div>
+                                <div style={{height: '1px', backgroundColor: '#46536B', width: '100%'}}></div>
                             </td>
                         </tr>
-                        <tr align="left" border-bottom='1px' padding= '10px'>
+                        <tr align="left" border-bottom='1px' padding='10px'>
                             <td width="50px">내용</td>
                             <td>{content}</td>
                         </tr>
                         <tr>
                             <td colSpan={2}>
-                                <div style={{height:'1px', backgroundColor:'#46536B', width:'100%'}}></div>
+                                <div style={{height: '1px', backgroundColor: '#46536B', width: '100%'}}></div>
                             </td>
                         </tr>
                         <tr>

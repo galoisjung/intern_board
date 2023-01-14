@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import axios from "axios";
 import ReplyView from "./ReplyView";
+import {API, COMMENT} from "./config";
 
 
 export const Reply = (props) => {
@@ -15,7 +16,8 @@ export const Reply = (props) => {
             reply: comment,
         }
 
-        axios.post(`http://localhost:5000/comment/${aid}/create`,
+
+        axios.post(COMMENT.CREATE + "/" + `${aid}`,
             data, {
                 headers: {
                     "Content-Type": "application/json",

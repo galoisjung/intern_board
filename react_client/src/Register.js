@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
+import {API} from "./config";
 
 export const Register = (props) => {
     const [email, setEmail] = useState('');
@@ -23,7 +24,9 @@ export const Register = (props) => {
             name: name,
             email: email
         }
-        axios.post('http://localhost:5000/api/phishing/register',
+
+
+        axios.post(API.REGISTER,
             {
                 data: data,
                 headers: {
@@ -43,9 +46,9 @@ export const Register = (props) => {
 
             }).catch(function (error) {
                 console.log((error.data))
-                if (error.response.data.code === 1) {
+                if (error.response.status === 400) {
                     alert("ID 혹은 E-mail이 이미 있습니다.")
-                } else if (error.response.data.code === 2) {
+                } else if (error.response.status === 403) {
                     alert("필수 사항을 입력하지 않았습니다.")
                 } else {
                     alert("죄송합니다. 등록에 실패했습니다. 잠시 후 다시 시도해주세요.")

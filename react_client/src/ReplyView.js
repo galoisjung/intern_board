@@ -5,6 +5,7 @@ import Button from "react-bootstrap/Button";
 import Update from "./Update";
 import Write from "./Write";
 import {Reply} from "./Reply";
+import {COMMENT} from "./config";
 
 
 /**
@@ -16,7 +17,7 @@ class ReplyView extends Component {
     };
 
     getList = (props) => {
-        Axios.get(`http://localhost:5000/comment/${this.props.aid}`)
+        Axios.get(COMMENT.REPLAYLIST + "/" + `${this.props.aid}`)
             .then((res) => {
                 const data = res.data;
                 this.setState({
@@ -28,7 +29,7 @@ class ReplyView extends Component {
             });
     };
     delCom = (prop) => {
-        Axios.post(`http://localhost:5000/comment/${this.props.aid}/delete`, {id: prop}
+        Axios.post(COMMENT.DELETE + "/" + `${this.props.aid}`, {id: prop}
         ).then((res) => {
             window.location.reload()
         })

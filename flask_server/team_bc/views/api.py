@@ -34,7 +34,7 @@ from psycopg2.errors import UniqueViolation
 #     return render_template('index.js')
 
 
-bp = Blueprint('api', __name__, url_prefix='/api/phishing/')
+bp = Blueprint('api', __name__, url_prefix='/api/')
 
 
 @login_manager.user_loader
@@ -51,7 +51,7 @@ def userLogin():
     if user_id != "" and password != "":
         if info and info.password == password:
             login_user(info)
-            return jsonify({"session_key": "hello"})
+            return jsonify()
         else:
             responce = jsonify({"error": "error"})
             responce.status_code = 401
@@ -73,6 +73,8 @@ def register():
     # -------------------------------------------- (1) response (원래 만들었던 server.py 참고하여 작성...?) -> (2) UI 작성
     # ---------------------------------- DataBase 와 연결
     try:
+        if id == "" or password == "" or email == "" or name == "":
+            raise ValueError
         info = Information(id=id, password=password, email=email, name=name)
         from team_bc import db
         db.session.add(info)
@@ -80,13 +82,12 @@ def register():
         response = jsonify({
             "status": "success"
         })
-    except IntegrityError as e:
-        response = jsonify({
-            "error": "Bad_Request",
-            "detail": e.orig.diag.message_detail,
-            "code": 1
-        })
+    except IntegrityError:
+        response = jsonify()
         response.status_code = 400
+    except ValueError:
+        response = jsonify()
+        response.status_code = 403
 
     return response
 

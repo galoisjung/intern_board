@@ -1,18 +1,14 @@
-from flask import Flask, session
+from flask import Flask
 from flask_cors import CORS
 from flask_login import LoginManager
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
-import config
-from flask_session import Session
-
+from team_bc import config
 
 db = SQLAlchemy()
 migrate = Migrate()
 login_manager = LoginManager()
 
-
-# sess = Session()
 
 
 def create_app():
@@ -20,11 +16,9 @@ def create_app():
     app.config.from_object(config)
 
     db.init_app(app)
-    # sess.init_app(app)
     login_manager.init_app(app)
 
     from team_bc.models.Infomation import Information
-    from . import models
     @login_manager.user_loader
     def load_user(user_id):
         return Information.query.get(user_id)
